@@ -1,22 +1,22 @@
 
 
 /* ==========================================================================
-   Author's custom styles
+   Kamil Owczarz's custom styles
    ========================================================================== */
 
 
+#loginForm{
+    height: 280px;
+    width: 260px;
+    position: center;
 
+}
 
+#navLabel{
+    color: #adadad ;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+#zar_nav{
+    position: absolute;
+    align-content: center;
+}
