@@ -4,6 +4,10 @@
    Kamil Owczarz's custom styles
    ========================================================================== */
 
+#jumboBacInd {
+    background: image();
+}
+
 
 #loginForm{
     height: 280px;
