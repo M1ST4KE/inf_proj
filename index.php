@@ -56,8 +56,6 @@
             <?php
             session_start();
             require('connect.php');
-            //3. If the form is submitted or not.
-            //3.1 If the form is submitted
             if (isset($_POST['username']) and isset($_POST['password'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
@@ -81,11 +79,7 @@
             else{
 
             ?>
-            <?php
-            session_start();
-            session_destroy();
-            header('Location: login.php');
-            ?>
+
             <form class="navbar-form navbar-right" role="form" method="POST">
                 <div class="form-group">
                     <input type="text" placeholder="Nazwa użytkownika" class="form-control" name="username" required>
