@@ -5,16 +5,9 @@
    ========================================================================== */
 
 #jumboBacInd {
-    background: image();
+    background-image: url("img/jumboBg.jpg");
 }
 
-#loginForm{
-    position: fixed;
-    height: 280px;
-    width: 260px;
-    align-content: center;
-
-}
 
 #navLabel{
     color: #adadad ;

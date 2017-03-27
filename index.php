@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -58,7 +59,7 @@
             require('connect.php');
             if (isset($_POST['username']) and isset($_POST['password'])) {
                 $username = $_POST['username'];
-                $password = $_POST['password'];
+                $password = md5($_POST['password']);
                 $query = "SELECT * FROM `user` WHERE username='$username' and password='$password'";
 
                 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
@@ -106,23 +107,21 @@
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
             <h2>HTML 5 Boilerplate</h2>
             <p>HTML5 Boilerplate jest profesjonalnym front-endowym „starter kitem”. Pomaga budować, a raczej rozpocząć
                 budowę witryny zgodnej ze specyfikacją HTML5</p>
             <p><a class="btn btn-default" href="//html5boilerplate.com" role="button">Dowiedz się więcej &raquo;</a></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
             <h2>Bootsrap</h2>
             <p> Bootstrap to framework CSS, rozwijany przez programistów Twittera. Zawiera zestaw przydatnych narzędzi
                 ułatwiających tworzenie interfejsu graficznego stron oraz aplikacji internetowych.</p>
             <p><a class="btn btn-default" href="//getbootstrap.com" role="button">Dowiedz się więcej &raquo;</a></p>
         </div>
-        <div class="col-md-4">
-            <h2>Laravel</h2>
-            <p></p>
-            <p><a class="btn btn-default" href="#" role="button">Dowiedz się więcej &raquo;</a></p>
-        </div>
+
     </div>
 
     <hr>

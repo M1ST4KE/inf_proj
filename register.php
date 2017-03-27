@@ -52,7 +52,7 @@ require('connect.php');
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $email = md5($_POST['email']);
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     $query = "INSERT INTO `user` (username, password, email) VALUES ('$username', '$password', '$email')";
     $result = mysqli_query($connection, $query);
@@ -65,8 +65,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 ?>
 
 <div id="container">
-    <div id="login">
-        <div id="loginForm">
+    <div>
             <form class="form-signin" method="POST">
 
                 <h2 class="form-signin-heading">Please Register</h2>
@@ -86,7 +85,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się!</button>
             </form>
-        </div>
     </div>
 
 
