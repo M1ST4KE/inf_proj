@@ -4,8 +4,16 @@
    Kamil Owczarz's custom styles
    ========================================================================== */
 
+#black {
+    color: black;
+}
+
 #jumboBacInd {
-    background-image: url("img/jumboBg.jpg");
+    background-image: url('../img/jumboBg.jpg');
+    background-position: top;
+    bckground-size: contain;
+    background-repeat: inherit;
+
 }
 
 

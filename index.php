@@ -96,8 +96,8 @@
 </nav>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container" id="jumboBacInd">
+<div class="jumbotron" id="jumboBacInd">
+    <div class="container" id="black">
         <h1>Cześć!</h1>
         <p>Witam wszystkich na mojej stronie</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
