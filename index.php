@@ -75,9 +75,8 @@
                 echo "To jest obszar zastrzeżony";
                 echo "<a href='logout.php'>Logout</a>";
 
+            } else {
             }
-            else{
-
             ?>
 
             <form class="navbar-form navbar-right" role="form" method="POST">

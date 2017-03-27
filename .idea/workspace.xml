@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4e28e2a-b1ce-4fa4-b6ef-d0b41da0d8ee" name="Default" comment="rejestracja, logowanie">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logout.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
@@ -24,15 +23,15 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1377">
-                  <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+                <state relative-caret-position="262">
+                  <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
                   <folding>
-                    <marker date="1490637647947" expanded="true" signature="1469:1622" ph="..." />
-                    <marker date="1490637647947" expanded="true" signature="1562:1590" ph="..." />
-                    <marker date="1490637647947" expanded="true" signature="2600:2672" ph="SELECT * FRO... user" />
-                    <marker date="1490637647947" expanded="true" signature="5944:6257" ph="..." />
-                    <marker date="1490637647947" expanded="true" signature="5979:6257" ph="{...}" />
-                    <marker date="1490637647947" expanded="true" signature="6066:6137" ph="{...}" />
+                    <marker date="1490637795403" expanded="true" signature="1469:1622" ph="..." />
+                    <marker date="1490637795403" expanded="true" signature="1562:1590" ph="..." />
+                    <marker date="1490637795403" expanded="true" signature="2600:2672" ph="SELECT * FRO... user" />
+                    <marker date="1490637795403" expanded="true" signature="5958:6271" ph="..." />
+                    <marker date="1490637795403" expanded="true" signature="5993:6271" ph="{...}" />
+                    <marker date="1490637795403" expanded="true" signature="6080:6151" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -131,8 +130,8 @@
         <option value="$PROJECT_DIR$/connect.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/logout.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -286,7 +285,7 @@
       <workItem from="1489680734466" duration="810000" />
       <workItem from="1490000105626" duration="2553000" />
       <workItem from="1490632427479" duration="2369000" />
-      <workItem from="1490634892668" duration="2762000" />
+      <workItem from="1490634892668" duration="2896000" />
     </task>
     <task id="LOCAL-00001" summary="dodane favicony">
       <created>1488830313918</created>
@@ -351,11 +350,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490637481570</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="rejestracja, logowanie">
+      <created>1490637671284</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1490637671284</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22222000" />
+    <option name="totallyTimeSpent" value="22356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -687,15 +693,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="262">
+          <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
           <folding>
-            <marker date="1490637647947" expanded="true" signature="1469:1622" ph="..." />
-            <marker date="1490637647947" expanded="true" signature="1562:1590" ph="..." />
-            <marker date="1490637647947" expanded="true" signature="2600:2672" ph="SELECT * FRO... user" />
-            <marker date="1490637647947" expanded="true" signature="5944:6257" ph="..." />
-            <marker date="1490637647947" expanded="true" signature="5979:6257" ph="{...}" />
-            <marker date="1490637647947" expanded="true" signature="6066:6137" ph="{...}" />
+            <marker date="1490637795403" expanded="true" signature="1469:1622" ph="..." />
+            <marker date="1490637795403" expanded="true" signature="1562:1590" ph="..." />
+            <marker date="1490637795403" expanded="true" signature="2600:2672" ph="SELECT * FRO... user" />
+            <marker date="1490637795403" expanded="true" signature="5958:6271" ph="..." />
+            <marker date="1490637795403" expanded="true" signature="5993:6271" ph="{...}" />
+            <marker date="1490637795403" expanded="true" signature="6080:6151" ph="{...}" />
           </folding>
         </state>
       </provider>
