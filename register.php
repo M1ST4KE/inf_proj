@@ -49,10 +49,9 @@
 
 <?php
 require('connect.php');
-// If the values are posted, insert them into the database.
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
-    $email = $_POST['email'];
+    $email = md5($_POST['email']);
     $password = $_POST['password'];
 
     $query = "INSERT INTO `user` (username, password, email) VALUES ('$username', '$password', '$email')";
@@ -69,10 +68,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <div id="login">
         <div id="loginForm">
             <form class="form-signin" method="POST">
-                <?php if (isset($smsg)) { ?>
-                    <div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
-                <?php if (isset($fmsg)) { ?>
-                    <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
+
                 <h2 class="form-signin-heading">Please Register</h2>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
@@ -84,15 +80,20 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Podaj hasło"
                        required>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-                <a class="btn btn-lg btn-primary btn-block" href="login.php">Login</a>
+                <?php if (isset($smsg)) { ?>
+                    <div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
+                <?php if (isset($fmsg)) { ?>
+                    <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się!</button>
             </form>
         </div>
     </div>
-    <footer>
-        <p>&copy; Kamil Owczarz 2017</p>
-    </footer>
+
 
 </div> <!-- end of container-->
+<footer>
+    <p>&copy; Kamil Owczarz 2017</p>
+</footer>
+
 </body>
 </html>

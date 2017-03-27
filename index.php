@@ -53,12 +53,45 @@
             <a class="navbar-brand" href="index.php">Kamil Owczarz</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+            <?php
+            session_start();
+            require('connect.php');
+            //3. If the form is submitted or not.
+            //3.1 If the form is submitted
+            if (isset($_POST['username']) and isset($_POST['password'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $query = "SELECT * FROM `user` WHERE username='$username' and password='$password'";
+
+                $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+                $count = mysqli_num_rows($result);
+                if ($count == 1) {
+                    $_SESSION['username'] = $username;
+                } else {
+                    $fmsg = "Błędne dane logowania.";
+                }
+            }
+            if (isset($_SESSION['username'])){
+                $username = $_SESSION['username'];
+                echo "Cześć " . $username . "";
+                echo "To jest obszar zastrzeżony";
+                echo "<a href='logout.php'>Logout</a>";
+
+            }
+            else{
+
+            ?>
+            <?php
+            session_start();
+            session_destroy();
+            header('Location: login.php');
+            ?>
             <form class="navbar-form navbar-right" role="form" method="POST">
                 <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control" name="mail">
+                    <input type="text" placeholder="Nazwa użytkownika" class="form-control" name="username" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control" name="passs">
+                    <input type="password" placeholder="Hasło" class="form-control" name="password">
                 </div>
                 <button type="submit" class="btn btn-success">Zaloguj!</button>
                 <label id="navLabel"> lub </label>
