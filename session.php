@@ -51,43 +51,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Kamil Owczarz</a>
+            <a class="navbar-brand" href="session.php"><?php echo $_SESSION['username'] ?></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <?php
-            session_start();
-            require('connect.php');
-            if (isset($_POST['username']) and isset($_POST['password'])) {
-                $username = $_POST['username'];
-                $password = md5($_POST['password']);
-                $query = "SELECT * FROM `user` WHERE username='$username' and password='$password'";
-
-                $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-                $count = mysqli_num_rows($result);
-                if ($count == 1) {
-                    $_SESSION['username'] = $username;
-                } else {
-                    $fmsg = "Błędne dane logowania.";
-                }
-            }
-            if (isset($_SESSION['username'])){
-                $username = $_SESSION['username'];
-                echo "Cześć " . $username . "";
-                header('Location: session.php');;
-            } else {
-            }
-            ?>
-
             <form class="navbar-form navbar-right" role="form" method="POST">
-                <div class="form-group">
-                    <input type="text" placeholder="Nazwa użytkownika" class="form-control" name="username" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Hasło" class="form-control" name="password">
-                </div>
-                <button type="submit" class="btn btn-success">Zaloguj!</button>
-                <label id="navLabel"> lub </label>
-                <a class="btn btn-primary" href="register.php" role="button">Zarejestruj się!</a>
+                <a class="btn btn-primary" href="logout.php" role="button">Wyloguj się</a>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
@@ -98,6 +66,7 @@
     <div class="container" id="black">
         <h1>Cześć!</h1>
         <p>Witam wszystkich na mojej stronie</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
 </div>
 

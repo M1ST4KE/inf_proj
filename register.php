@@ -35,15 +35,52 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.php">Kamil Owczarz</a>
-
         </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <?php
+            session_start();
+            require('connect.php');
+            if (isset($_POST['username']) and isset($_POST['password'])) {
+                $username = $_POST['username'];
+                $password = md5($_POST['password']);
+                $query = "SELECT * FROM `user` WHERE username='$username' and password='$password'";
+
+                $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+                $count = mysqli_num_rows($result);
+                if ($count == 1) {
+                    $_SESSION['username'] = $username;
+                } else {
+                    $fmsg = "Błędne dane logowania.";
+                }
+            }
+            if (isset($_SESSION['username'])) {
+                $username = $_SESSION['username'];
+                echo "Cześć " . $username . "";
+                echo "To jest obszar zastrzeżony";
+                echo "<a href='logout.php'>Logout</a>";
+
+            } else {
+            }
+            ?>
+
+            <form class="navbar-form navbar-right" role="form" method="POST">
+                <div class="form-group">
+                    <input type="text" placeholder="Nazwa użytkownika" class="form-control" name="username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Hasło" class="form-control" name="password">
+                </div>
+                <button type="submit" class="btn btn-success">Zaloguj!</button>
+            </form>
+        </div><!--/.navbar-collapse -->
     </div>
 </nav>
 
@@ -68,7 +105,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <div>
             <form class="form-signin" method="POST">
 
-                <h2 class="form-signin-heading">Please Register</h2>
+                <h2 class="form-signin-heading">Wypełnij formularz</h2>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
                     <input type="text" name="username" class="form-control" placeholder="Nazwa użytkownika" required>
