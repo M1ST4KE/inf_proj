@@ -71,18 +71,43 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-10">
-            <table>
+        <div class="col-lg-12">
+            <table class="table-striped">
                 <tbody>
                 <tr>
-                    <td>ID</td>
-                    <td>login</td>
-                    <td>hasło</td>
-                    <td>mail</td>
-                    <td>poziom przywilejów</td>
-                    <td>data dodania</td>
+                    <th id="tekstLeft">ID</th>
+                    <th id="tekstLeft">Login</th>
+                    <th id="tekstLeft">Mail</th>
+                    <th id="tekstLeft">Hasło</th>
+                    <th id="tekstLeft">Przyw.</th>
+                    <th id="tekstLeft">Data dodania</th>
+                    <th>Edytuj</th>
+                    <th>Usuń</th>
                 </tr>
+                <?php
+                require('connect.php');
+
+                $sql = "SELECT * FROM `user` ";
+                $result = $connection->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row['id'] . "</td>";
+                        echo "<td>" . $row['username'] . "</td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td>" . $row['password'] . "</td>";
+                        echo "<td>" . $row['prev_lvl'] . "</td>";
+                        echo "<td>" . $row['reg_date'] . "</td>";
+                        $lol = $row['id'];
+                        echo "<td id='przycEd'><a class='btn btn-warning' href='edit.php?id=$lol'>Edytuj</a></td>"; //edit
+                        echo "<td id='przycEd'><a class='btn btn-danger' href='delete.php?id=$lol'>Usuń</a></td>"; //del
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td>0 results</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
         </div>

@@ -20,6 +20,14 @@
     color: #adadad ;
 }
 
+#przycEd {
+    align-content: center;
+}
+
+#tekstLeft {
+    text-align: left;
+}
+
 #zar_nav{
     position: absolute;
     align-content: center;
@@ -64,4 +72,20 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+    text-align: center;
+    font-size: larger;
+}
+
+tr {
+    height: 40px;
+    align-content: center;
+    font-size: medium;
 }

@@ -90,7 +90,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $query = "INSERT INTO `user` (username, password, email, reg_from) VALUES ('$username', '$password', '$email', NOW())";
+    $query = "INSERT INTO `user` (username, password, email, reg_date) VALUES ('$username', '$password', '$email', NOW())";
     $result = mysqli_query($connection, $query);
     if ($result) {
         $smsg = "Rejestracja zakończona powodzeniem";

@@ -1,5 +1,5 @@
 var footerHeight = 0,
-    footerTop = 0;
+    footerTop = 30;
 
 function positionFooter(footer) {
     footerHeight = footer.height();
