@@ -37,9 +37,10 @@
     <script src="js/main.js"></script>
 </head>
 <?php
-if (session_status() == PHP_SESSION_ACTIVE) {
-} else {
-    header('Location: index.php');
+session_start();
+if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
+    header("Location: index.php");
+    exit();
 }
 ?>
 <body>
@@ -69,7 +70,23 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 
 
 <div class="container">
-
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-10">
+            <table>
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>login</td>
+                    <td>hasło</td>
+                    <td>mail</td>
+                    <td>poziom przywilejów</td>
+                    <td>data dodania</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; Kamil Owczarz 2017</p>

@@ -72,8 +72,8 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 <div class="jumbotron" id="jumboBacInd">
     <div class="container" id="black">
         <h1>Cześć <?php echo $_SESSION['username']; ?>!</h1>
-        <p>Witam wszystkich na mojej stronie</p>
-        <p><a class="btn btn-primary btn-lg" href="users.php" role="button">Learn more &raquo;</a></p>
+        <p>Witam Cię na mojej stronie</p>
+        <p><a class="btn btn-primary btn-lg" href="users.php" role="button">Edytuj użytkowników &raquo;</a></p>
     </div>
 </div>
 

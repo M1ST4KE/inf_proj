@@ -11,7 +11,7 @@
 #jumboBacInd {
     background-image: url('../img/jumboBg.jpg');
     background-position: top;
-    bckground-size: cover;
+    bckground-size: width;
     background-repeat: no-repeat;
 }
 
