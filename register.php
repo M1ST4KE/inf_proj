@@ -56,6 +56,7 @@
                 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                 $count = mysqli_num_rows($result);
                 if ($count == 1) {
+                    $_SESSION['logged'] = true;
                     $_SESSION['username'] = $username;
                 } else {
                     $fmsg = "Błędne dane logowania.";
@@ -64,9 +65,7 @@
             if (isset($_SESSION['username'])) {
                 $username = $_SESSION['username'];
                 echo "Cześć " . $username . "";
-                echo "To jest obszar zastrzeżony";
-                echo "<a href='logout.php'>Logout</a>";
-
+                header('Location: session.php');;
             } else {
             }
             ?>
@@ -88,10 +87,10 @@
 require('connect.php');
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
-    $email = md5($_POST['email']);
+    $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $query = "INSERT INTO `user` (username, password, email) VALUES ('$username', '$password', '$email')";
+    $query = "INSERT INTO `user` (username, password, email, reg_from) VALUES ('$username', '$password', '$email', NOW())";
     $result = mysqli_query($connection, $query);
     if ($result) {
         $smsg = "Rejestracja zakończona powodzeniem";
