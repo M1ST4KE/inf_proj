@@ -36,14 +36,13 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="js/main.js"></script>
 </head>
-<body>
 <?php
-session_start();
-if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
-    header("Location: index.php");
-    exit();
+if (session_status() == PHP_SESSION_ACTIVE) {
+} else {
+    header('Location: index.php');
 }
 ?>
+<body>
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -68,36 +67,9 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     </div>
 </nav>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron" id="jumboBacInd">
-    <div class="container" id="black">
-        <h1>Cześć <?php echo $_SESSION['username']; ?>!</h1>
-        <p>Witam wszystkich na mojej stronie</p>
-        <p><a class="btn btn-primary btn-lg" href="users.php" role="button">Learn more &raquo;</a></p>
-    </div>
-</div>
 
 <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-5">
-            <h2>HTML 5 Boilerplate</h2>
-            <p>HTML5 Boilerplate jest profesjonalnym front-endowym „starter kitem”. Pomaga budować, a raczej rozpocząć
-                budowę witryny zgodnej ze specyfikacją HTML5</p>
-            <p><a class="btn btn-default" href="//html5boilerplate.com" role="button">Dowiedz się więcej &raquo;</a></p>
-        </div>
-        <div class="col-md-5">
-            <h2>Bootsrap</h2>
-            <p> Bootstrap to framework CSS, rozwijany przez programistów Twittera. Zawiera zestaw przydatnych narzędzi
-                ułatwiających tworzenie interfejsu graficznego stron oraz aplikacji internetowych.</p>
-            <p><a class="btn btn-default" href="//getbootstrap.com" role="button">Dowiedz się więcej &raquo;</a></p>
-        </div>
 
-    </div>
-
-    <hr>
 
     <footer>
         <p>&copy; Kamil Owczarz 2017</p>

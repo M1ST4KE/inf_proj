@@ -11,9 +11,8 @@
 #jumboBacInd {
     background-image: url('../img/jumboBg.jpg');
     background-position: top;
-    bckground-size: contain;
-    background-repeat: inherit;
-
+    bckground-size: cover;
+    background-repeat: no-repeat;
 }
 
 
