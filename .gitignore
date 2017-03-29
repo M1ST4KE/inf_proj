@@ -50,4 +50,4 @@ Temporary Items
 .idea
 
 #database
-connect.php
+php/connect.php

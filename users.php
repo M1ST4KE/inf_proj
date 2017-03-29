@@ -85,7 +85,7 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                     <th>Usuń</th>
                 </tr>
                 <?php
-                require('connect.php');
+                require('php/connect.php');
 
                 $sql = "SELECT * FROM `user` ";
                 $result = $connection->query($sql);
@@ -100,8 +100,8 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                         echo "<td>" . $row['prev_lvl'] . "</td>";
                         echo "<td>" . $row['reg_date'] . "</td>";
                         $lol = $row['id'];
-                        echo "<td id='przycEd'><a class='btn btn-warning' href='edit.php?id=$lol'>Edytuj</a></td>"; //edit
-                        echo "<td id='przycEd'><a class='btn btn-danger' href='delete.php?id=$lol'>Usuń</a></td>"; //del
+                        echo "<td id='przycEd'><a class='btn btn-warning' href='php/edit.php?id=$lol'>Edytuj</a></td>"; //edit
+                        echo "<td id='przycEd'><a class='btn btn-danger' href='php/delete.php?id=$lol'>Usuń</a></td>";  //del
                         echo "</tr>";
                     }
                 } else {
