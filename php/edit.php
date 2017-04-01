@@ -101,8 +101,12 @@ if (!($prev['prev_lvl'] - $pr['prev_lvl'] >= 0 || $id != $prev['id'])) {
         echo '<label for="nazwa">Nazwa</label>';
         echo '<input type="text" name="nazwa" value="' . md5($row['password']) . '"/>';
         echo '<button type="submit" class="btn btn-success">Zatwierdź!</button>';
+        echo '<a type="submit" href="../users.php" role="button" class="btn btn-primary">Zatwierdź i wróć</a>';
         echo "</form>";
         ?>
+        <footer>
+            <p>&copy; Kamil Owczarz 2017</p>
+        </footer>
     </div> <!-- /container -->
 <?php } ?>
 </body>
