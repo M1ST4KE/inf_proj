@@ -8,13 +8,13 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 require("connect.php");
 
 $username = $_SESSION['username'];
-$query = "SELECT id, prev_lvl FROM `user` WHERE username ='$username'";
+$query = "SELECT `id`, `prev_lvl` FROM `user` WHERE `username` ='$username'";
 $prev = $connection->query($query);
 $prev = $prev->fetch_assoc();
 
 $id = $_GET['id'];
 
-$query = "SELECT prev_lvl FROM `users` WHERE id ='$id'";
+$query = "SELECT `prev_lvl` FROM `user` WHERE `id`='$id'";
 $pr = $connection->query($query);
 $pr = $pr->fetch_assoc();
 
