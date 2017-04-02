@@ -22,9 +22,10 @@ if ($prev['prev_lvl'] - $pr['prev_lvl'] > 0 && $id != $prev['id']) {
     var_dump($id);
     $sql = "DELETE FROM `user` WHERE `id` ='$id'";
     $connection->query($sql);
+    header("Location: ../users.php");
 } else {
-
+    header("Location: ../users.php?err=1");
 }
-
-header("Location: ../users.php");
 ?>
+
+
