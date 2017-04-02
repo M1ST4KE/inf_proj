@@ -70,12 +70,12 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
 
 <div class="container">
-    <?php if ($_GET['err'] == 1) { ?>
+    <?php if (isset($_GET['err']) && $_GET['err'] == 1) { ?>
         <div class="alert alert-danger" role="alert"> Usunięcie użytkownika nie powiodło się -<br>brak wystarczających
             uprawnień.
         </div>
     <?php } ?>
-    <?php if ($_GET['err'] == 2) { ?>
+    <?php if (isset($_GET['err']) && $_GET['err'] == 2) { ?>
         <div class="alert alert-danger" role="alert"> Edycja danych użytkownika nie powiodła się -<br>brak
             wystarczających uprawnień.
         </div>
