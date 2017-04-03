@@ -21,6 +21,8 @@ $_SESSION['username'] = $username;
 if (empty($_POST['passwd'])) {
     if ($prev['prev_lvl'] == 3) {
         $poz = $_POST['poz'];
+        if ($poz > 2)
+            $poz = 1;
         $qr = "UPDATE `user` SET `username`='$username', `email`='$email', `prev_lvl`='$poz' WHERE `id` = '$id'";
     } else {
         $qr = "UPDATE `user` SET `username`='$username', `email`='$email' WHERE `id` = '$id'";
@@ -29,6 +31,8 @@ if (empty($_POST['passwd'])) {
     $password = $_POST['passwd'];
     if ($prev['prev_lvl'] == 3) {
         $poz = $_POST['poz'];
+        if ($poz > 2)
+            $poz = 1;
         $qr = "UPDATE `user` SET `username`='$username', `email`='$email', `password`='$password', `prev_lvl`='$poz' WHERE `id` = '$id'";
     } else {
         $qr = "UPDATE `user` SET `username`='$username', `email`='$email', `password`='$password', WHERE `id` = '$id'";

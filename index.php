@@ -73,7 +73,8 @@
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
-
+<?php if (isset($failmsg)) { ?>
+    <div class="alert alert-danger" role="alert" id="abs"> <?php echo $fmsg; ?> </div><?php } ?>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron" id="jumboBacInd">
     <div class="container" id="black">
