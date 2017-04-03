@@ -62,7 +62,7 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" role="form" method="POST">
-                <a class="btn btn-primary" href="../logout.php" role="button">Wyloguj się</a>
+                <a class="btn btn-primary" href="logout.php" role="button">Wyloguj się</a>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
@@ -91,25 +91,39 @@ if (!($prev['prev_lvl'] - $pr['prev_lvl'] >= 0 || $id != $prev['id'])) {
         <?php
         $query = "SELECT * FROM `user` WHERE `id`=" . $_GET['id'] . ';';
         $result = $connection->query($query);
-        $row = $result->fetch_array();
-        echo '<form method="post" action="editp.php">';
-        echo '<input type="hidden" name="id" value="' . $_GET['id'] . '" />';
-        echo '<label for="nazwa">Nazwa </label>';
-        echo '<input type="text" name="nazwa" placeholder="' . $row['username'] . '" value="' . $row['username'] . '"/>';
-        echo '<label for="email">Email </label>';
-        echo '<input type="text" name="email" placeholder="' . $row['email'] . '" value="' . $row['email'] . '"/>';
-
-        if ($prev['prev_lvl'] == 3) {
-            echo '<label for="poz">';
-            echo '<input type="text" name="poz" value="' . $row('prev_lvl') . '" placeholder="' . $row['email'] . '"/>';
-        } else {
-        }
-
-        echo '<button type="submit" class="btn btn-success">Zatwierdź!</button>';
-        echo "</form>";
-
-
-        ?>
+        $row = $result->fetch_array(); ?>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form method="post" action="editp.php" class="form-signin">
+                    <input type="hidden" name="id" value="' . $_GET['id'] . '"/>
+                    <div class="form-group">
+                        <label for="nazwa">Nazwa:</label>
+                        <?php echo '<input type="text" name="nazwa" class="form-control" value="' . $row['username'] . '"/>' ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <?php echo '<input type="email" name="email" class="form-control" value="' . $row['email'] . '"/>' ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwd">Jeśli chcesz zmienić, podaj hasło:</label>
+                        <input type="password" name="passwd" class="form-control">
+                    </div>
+                    <?php
+                    if ($prev['prev_lvl'] == 3) {
+                        echo '<div class="form-group">';
+                        echo '<label for="poz">';
+                        echo '<input class="form-control" type="text" name="poz" value="' . $row['prev_lvl'] . '"/>';
+                        echo '</div>';
+                    } else {
+                    }
+                    ?>
+                    <a class="btn btn-block btn-danger" href="../users.php">Cofnij!</a>
+                    <button type="submit" class="btn btn-lg btn-success btn-block">Zatwierdź!</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
         <footer>
             <p>&copy; Kamil Owczarz 2017</p>
         </footer>
@@ -117,4 +131,3 @@ if (!($prev['prev_lvl'] - $pr['prev_lvl'] >= 0 || $id != $prev['id'])) {
 <?php } ?>
 </body>
 </html>
-

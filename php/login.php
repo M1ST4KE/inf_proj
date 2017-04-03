@@ -11,7 +11,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
         $_SESSION['logged'] = true;
         $_SESSION['username'] = $username;
     } else {
-        $fmsg = "Błędne dane logowania.";
+        $failmsg = "Błędne dane logowania.";
     }
 }
 if (isset($_SESSION['username'])) {

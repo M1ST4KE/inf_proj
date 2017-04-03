@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -81,14 +82,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 ?>
 
 <div id="container">
+    <?php if (isset($failmsg)) { ?>
+        <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
     <div>
             <form class="form-signin" method="POST">
-
                 <h2 class="form-signin-heading">Wypełnij formularz</h2>
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">@</span>
-                    <input type="text" name="username" class="form-control" placeholder="Nazwa użytkownika" required>
-                </div>
+                <input type="text" name="username" class="form-control" placeholder="Nazwa użytkownika" required>
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Adres email" required
                        autofocus>
@@ -103,11 +102,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             </form>
     </div>
 
-
+    <footer>
+        <p> &copy; Kamil Owczarz 2017</p>
+    </footer>
 </div> <!-- end of container-->
-<footer>
-    <p>&copy; Kamil Owczarz 2017</p>
-</footer>
-
 </body>
 </html>

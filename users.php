@@ -63,7 +63,7 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" role="form" method="POST">
-                <a class="btn btn-primary" href="logout.php" role="button">Wyloguj się</a>
+                <a class="btn btn-primary" href="php/logout.php" role="button">Wyloguj się</a>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
@@ -125,7 +125,7 @@ if (!isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     </div>
 
     <footer>
-        <p>&copy; Kamil Owczarz 2017</p>
+        <p> &copy; Kamil Owczarz 2017</p>
     </footer>
 </div> <!-- /container -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
