@@ -92,21 +92,23 @@ if (!($prev['prev_lvl'] - $pr['prev_lvl'] >= 0 || $id != $prev['id'])) {
         $query = "SELECT * FROM `user` WHERE `id`=" . $_GET['id'] . ';';
         $result = $connection->query($query);
         $row = $result->fetch_array();
-        echo '<form method="post">';
+        echo '<form method="post" action="editp.php">';
         echo '<input type="hidden" name="id" value="' . $_GET['id'] . '" />';
         echo '<label for="nazwa">Nazwa </label>';
         echo '<input type="text" name="nazwa" placeholder="' . $row['username'] . '" value="' . $row['username'] . '"/>';
         echo '<label for="email">Email </label>';
         echo '<input type="text" name="email" placeholder="' . $row['email'] . '" value="' . $row['email'] . '"/>';
-        echo '<label for="haslo">Hasło </label>';
-        echo '<input type="text" name="haslo" value="' . md5($row['password']) . '" />';
-        if ($prev['prev_lvl'] >= 3) {
+
+        if ($prev['prev_lvl'] == 3) {
             echo '<label for="poz">';
             echo '<input type="text" name="poz" value="' . $row('prev_lvl') . '" placeholder="' . $row['email'] . '"/>';
+        } else {
         }
+
         echo '<button type="submit" class="btn btn-success">Zatwierdź!</button>';
-        echo '<a type="submit" href="../users.php" role="button" class="btn btn-primary">Zatwierdź i wróć</a>';
         echo "</form>";
+
+
         ?>
         <footer>
             <p>&copy; Kamil Owczarz 2017</p>
