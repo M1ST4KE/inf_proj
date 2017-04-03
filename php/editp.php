@@ -16,6 +16,11 @@ $prev = $prev->fetch_assoc();
 $id = $_POST['id'];
 $username = $_POST['nazwa'];
 $email = $_POST['email'];
+
+$query = "SELECT `username` FROM `user` WHERE `username` ='$username'";
+$username = $connection->query($query);
+$username = $username->fetch_assoc();
+
 $_SESSION['username'] = $username;
 
 if (empty($_POST['passwd'])) {
